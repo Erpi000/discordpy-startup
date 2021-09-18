@@ -5,6 +5,10 @@ import traceback
 bot = commands.Bot(command_prefix='/')
 
 
+activity = discord.Activity(name='minecraft avec nous', type=discord.ActivityType.playing)
+await client.change_presence(activity=activity)
+
+
 @bot.event
 async def on_command_error(ctx, error):
     orig_error = getattr(error, "original", error)
